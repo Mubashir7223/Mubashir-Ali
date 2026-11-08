@@ -34,7 +34,7 @@ Create an EmailJS service and template. The form sends `from_name`, `reply_to`, 
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. In the repository, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Add the three EmailJS values as Actions variables to enable form submission on the deployed site.
+The live site is available at [mubashir7223.github.io/Mubashir-Ali](https://mubashir7223.github.io/Mubashir-Ali/). The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Add the three EmailJS values as Actions variables to enable form submission on the deployed site.
 
 ## Personalize before launch
 
