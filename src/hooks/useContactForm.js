@@ -9,6 +9,7 @@ export default function useContactForm() {
     const form = event.currentTarget
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
     if (!serviceId || !templateId || !publicKey) {
@@ -19,11 +20,25 @@ export default function useContactForm() {
     setStatus('sending')
     try {
       await emailjs.sendForm(serviceId, templateId, form, { publicKey })
-      setStatus('sent')
-      form.reset()
     } catch {
       setStatus('error')
+      return
     }
+
+    if (!autoReplyTemplateId) {
+      setStatus('sent-no-auto-reply-config')
+      form.reset()
+      return
+    }
+
+    try {
+      await emailjs.sendForm(serviceId, autoReplyTemplateId, form, { publicKey })
+      setStatus('sent')
+    } catch {
+      setStatus('sent-no-auto-reply')
+    }
+
+    form.reset()
   }
 
   return { status, submit }

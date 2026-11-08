@@ -30,11 +30,11 @@ src/
 
 ## EmailJS
 
-Create an EmailJS service and template. The form sends `from_name`, `reply_to`, and `message` using `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY`. The public key is meant for browser use; do not put a private key in this project.
+Create two EmailJS templates: one to notify you, and one to send an automatic reply to the visitor. Both receive `from_name`, `reply_to`, and `message`; configure the auto-reply template's **To Email** as `{{reply_to}}`. Set `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY` in `.env`. The auto-reply template ID is optional: the main contact message will still be delivered if it is missing or its send fails. The public key is intended for browser use; do not put a private key in this project.
 
 ## GitHub Pages
 
-The live site is available at [mubashir7223.github.io/Mubashir-Ali](https://mubashir7223.github.io/Mubashir-Ali/). The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Add the three EmailJS values as Actions variables to enable form submission on the deployed site.
+The live site is available at [mubashir7223.github.io/Mubashir-Ali](https://mubashir7223.github.io/Mubashir-Ali/). The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Add the four `VITE_EMAILJS_*` values as Actions variables to enable contact notifications and automatic replies on the deployed site.
 
 ## Personalize before launch
 

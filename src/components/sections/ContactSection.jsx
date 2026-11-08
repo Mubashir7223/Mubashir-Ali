@@ -3,8 +3,10 @@ import useContactForm from '../../hooks/useContactForm.js'
 
 const messages = {
   sent: 'Thanks for reaching out. Your message has been sent.',
+  'sent-no-auto-reply-config': 'Your message was sent. The automatic reply is not configured yet.',
+  'sent-no-auto-reply': 'Your message was sent, but we could not send the automatic confirmation.',
   error: 'Something went wrong. Please try again in a moment.',
-  'missing-config': 'EmailJS is not configured yet. Add the three VITE_EMAILJS values to your .env file.',
+  'missing-config': 'EmailJS is not configured yet. Add the service ID, notification template ID, and public key to your .env file.',
 }
 
 export default function ContactSection() {
