@@ -6,7 +6,7 @@ const messages = {
   'sent-no-auto-reply-config': 'Your message was sent. The automatic reply is not configured yet.',
   'sent-no-auto-reply': 'Your message was sent, but we could not send the automatic confirmation.',
   error: 'Something went wrong. Please try again in a moment.',
-  'missing-config': 'EmailJS is not configured yet. Add the service ID, notification template ID, and public key to your .env file.',
+  'missing-config': 'EmailJS is not configured yet. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to your .env file.',
 }
 
 export default function ContactSection() {

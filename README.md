@@ -34,7 +34,7 @@ Create two EmailJS templates: one to notify you, and one to send an automatic re
 
 ## GitHub Pages
 
-The live site is available at [mubashir7223.github.io/Mubashir-Ali](https://mubashir7223.github.io/Mubashir-Ali/). The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Add repository Actions secrets named `SERVICE_ID`, `Message_Received_key`, and `Public_key`; add `Auto_Reply_key` optionally to enable visitor confirmations. The workflow maps them to Vite's `VITE_EMAILJS_*` variables during the build and reports a clear error if a required secret is missing.
+The live site is available at [mubashir7223.github.io/Mubashir-Ali](https://mubashir7223.github.io/Mubashir-Ali/). The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Add repository Actions secrets named `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY`; add `VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID` optionally to enable visitor confirmations. The workflow reports a clear error if a required secret is missing.
 
 ## Personalize before launch
 
