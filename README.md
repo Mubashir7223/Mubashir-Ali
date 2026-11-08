@@ -1,0 +1,45 @@
+# Mubashir Ali — Developer Portfolio
+
+A responsive, single-page portfolio built with React, Vite, and Tailwind CSS. Its visual direction is based on the supplied black-and-gold reference, with a custom illustrated portrait, responsive navigation, project cards, and subtle hover interactions.
+
+## Project structure
+
+```text
+public/
+  images/                     # Portrait illustration and static assets
+src/
+  components/
+    layout/                   # Site header and footer
+    projects/                 # Reusable project card and preview selector
+      visuals/                # Project preview artwork
+    sections/                 # Home, about, skills, projects, experience, hobbies, contact
+  data/                       # Editable project content
+  hooks/                      # EmailJS form behavior
+  pages/                      # Page-level section composition
+  styles/                     # Tailwind theme and project artwork styles
+  App.jsx
+  main.jsx
+```
+
+## Run locally
+
+1. Install Node.js 20 or newer.
+2. Run `npm install`.
+3. Copy `.env.example` to `.env` and set the EmailJS values if you want the contact form enabled.
+4. Run `npm run dev` and open the local URL Vite prints.
+
+## EmailJS
+
+Create an EmailJS service and template. The form sends `from_name`, `reply_to`, and `message` using `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY`. The public key is meant for browser use; do not put a private key in this project.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds and deploys the site when changes are pushed to `main`. In the repository, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Add the three EmailJS values as Actions variables to enable form submission on the deployed site.
+
+## Personalize before launch
+
+- Replace `public/images/mubashir-portrait.svg` with a portrait that represents you.
+- Replace the starter project concepts in `src/data/projects.js` and update their preview artwork under `src/components/projects/visuals/`.
+- Review the skills and learning milestones in the corresponding section files.
+- Update the sample hobbies in `src/components/sections/HobbiesSection.jsx`.
+- Replace the placeholder GitHub and LinkedIn URLs in the hero and footer with your profiles.

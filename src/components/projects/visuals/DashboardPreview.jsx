@@ -1,0 +1,8 @@
+export default function DashboardPreview() {
+  return (
+    <div className="project-preview flex gap-[5%] bg-[#111011] px-[6%] py-[8%] text-[#e9e3e4] md:gap-[7%] md:px-[8%] md:py-[6%]">
+      <div className="flex w-[22%] shrink-0 flex-col gap-[13px] text-[8px] text-[#817a7b] md:gap-[18px]"><b className="mb-3 font-sans text-[10px] font-semibold text-[#eee8e8] md:mb-5 md:text-[13px]">◉&nbsp; orbit</b><span className="text-accent">⌂ &nbsp;Overview</span><span>▦ &nbsp;Projects</span><span>◷ &nbsp;Activity</span><span>⚙ &nbsp;Settings</span></div>
+      <div className="flex-1 pt-[4%]"><small className="font-mono text-[8px] tracking-[.08em] text-[#82797a]">MONDAY, OCTOBER 21</small><h3 className="mb-[19px] mt-[9px] font-sans text-[22px] font-medium md:text-[clamp(20px,3vw,34px)]">Your week, in focus.</h3><div className="flex gap-3"><div className="flex-1 border border-[#292526] bg-[#181716] p-[9px] text-[8px] text-[#918a8a] md:p-3">Projects active<strong className="mt-1.5 block font-sans text-xl font-medium text-accent md:text-2xl">08</strong></div><div className="flex-1 border border-[#292526] bg-[#181716] p-[9px] text-[8px] text-[#918a8a] md:p-3">Tasks completed<strong className="mt-1.5 block font-sans text-xl font-medium text-accent md:text-2xl">24</strong></div></div><div className="mt-[17px] flex h-[85px] items-end justify-around gap-2 border-b border-[#51402a]">{Array.from({ length: 12 }, (_, index) => <i key={index} className={`w-[6%] rounded-t-[8px] ${index % 5 === 4 ? 'h-[93%] bg-[#ffb21a]' : index % 3 === 2 ? 'h-[80%] bg-[#aa7317]' : index % 2 ? 'h-[60%] bg-[#d38d13]' : 'h-[45%] bg-[#d38d13]'}`} />)}</div><div className="mt-[7px] text-center font-mono text-[7px] text-[#82797a]">MON　 TUE　 WED　 THU　 FRI　 SAT</div></div>
+    </div>
+  )
+}
