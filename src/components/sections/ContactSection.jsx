@@ -4,7 +4,7 @@ import useContactForm from '../../hooks/useContactForm.js'
 const messages = {
   sent: 'Thanks for reaching out. Your message has been sent.',
   'sent-no-auto-reply-config': 'Your message was sent. The automatic reply is not configured yet.',
-  'sent-no-auto-reply': 'Your message was sent, but we could not send the automatic confirmation.',
+  'sent-no-auto-reply': 'Your message reached Mubashir, but the auto-reply failed. Check its EmailJS template ID and set To Email to {{reply_to}}.',
   error: 'Something went wrong. Please try again in a moment.',
   'missing-config': 'EmailJS is not configured yet. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to your .env file.',
 }

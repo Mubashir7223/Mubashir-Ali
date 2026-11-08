@@ -34,7 +34,11 @@ export default function useContactForm() {
     try {
       await emailjs.sendForm(serviceId, autoReplyTemplateId, form, { publicKey })
       setStatus('sent')
-    } catch {
+    } catch (error) {
+      console.error('EmailJS automatic reply failed', {
+        status: error?.status ?? 'unknown',
+        text: typeof error?.text === 'string' ? error.text : 'No response details returned',
+      })
       setStatus('sent-no-auto-reply')
     }
 
