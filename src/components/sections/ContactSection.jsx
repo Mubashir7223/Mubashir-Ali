@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, Mail, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, Code2, LoaderCircle, Mail, MessageCircle } from 'lucide-react'
 import useContactForm from '../../hooks/useContactForm.js'
 
 const messages = {
@@ -32,8 +32,20 @@ export default function ContactSection() {
             <label className="block text-xs font-medium text-white/80">Your email<input className="mt-2 block h-12 w-full rounded-xl border border-white/10 bg-[#0c0c0b] px-4 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-accent/70 focus:ring-2 focus:ring-accent/10" name="reply_to" type="email" required placeholder="you@example.com" autoComplete="email" /></label>
           </div>
           <label className="mt-4 block text-xs font-medium text-white/80">A little about your project<textarea className="mt-2 block min-h-[150px] w-full resize-y rounded-xl border border-white/10 bg-[#0c0c0b] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-accent/70 focus:ring-2 focus:ring-accent/10" name="message" required rows="5" placeholder="What are you hoping to build?" /></label>
-          <button type="submit" disabled={status === 'sending'} className="mt-5 inline-flex min-h-12 items-center gap-3 rounded-full bg-accent px-6 text-sm font-bold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent-bright disabled:cursor-wait disabled:opacity-65">{status === 'sending' ? 'Sending…' : 'Send message'} <ArrowUpRight size={17} aria-hidden="true" /></button>
-          <p className={`mt-4 min-h-5 text-xs text-accent ${status !== 'idle' && status !== 'sending' ? 'opacity-100' : 'opacity-0'}`} aria-live="polite">{messages[status]}</p>
+          <button type="submit" disabled={status === 'sending'} className="mt-5 inline-flex min-h-12 items-center gap-3 rounded-full bg-accent px-6 text-sm font-bold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent-bright disabled:cursor-wait disabled:opacity-65">
+            {status === 'sending' ? 'Sending…' : 'Send message'}
+            {status === 'sending'
+              ? <LoaderCircle className="animate-spin" size={17} aria-hidden="true" />
+              : <ArrowUpRight size={17} aria-hidden="true" />}
+          </button>
+          <p
+            className={`mt-4 min-h-5 text-xs ${status === 'error' || status === 'missing-config' ? 'text-red-300' : 'text-accent'} ${status === 'idle' ? 'opacity-0' : 'opacity-100'}`}
+            role="status"
+            aria-live="polite"
+          >
+            {status === 'sending' && <LoaderCircle className="mr-2 inline-block animate-spin align-[-3px]" size={14} aria-hidden="true" />}
+            {status === 'sending' ? 'Sending your message securely…' : messages[status]}
+          </p>
         </form>
       </div>
     </section>
