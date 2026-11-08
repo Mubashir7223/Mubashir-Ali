@@ -8,6 +8,7 @@ const learningAreas = [
     title: 'Linux & command line',
     detail: 'Practicing shell basics, file permissions, and the tools used to work comfortably in a Linux environment.',
     label: 'Systems',
+    logo: 'Linux',
     color: '#f5c451',
   },
   {
@@ -15,6 +16,7 @@ const learningAreas = [
     title: 'Cloud fundamentals',
     detail: 'Learning core cloud concepts, deployment workflows, and how web applications run beyond a local machine.',
     label: 'Infrastructure',
+    logo: 'Cloud',
     color: '#64c8ff',
   },
   {
@@ -22,6 +24,7 @@ const learningAreas = [
     title: 'AI tools',
     detail: 'Exploring AI-assisted development workflows and evaluating where these tools can support practical work.',
     label: 'Emerging tools',
+    logo: 'AI tools',
     color: '#b69cff',
   },
   {
@@ -29,6 +32,7 @@ const learningAreas = [
     title: 'Cloudflare Tunnel',
     detail: 'Learning how tunnels can securely connect a local development service to an approved external endpoint.',
     label: 'Networking',
+    logo: 'Cloudflare',
     color: '#ffad55',
   },
   {
@@ -36,6 +40,7 @@ const learningAreas = [
     title: 'Security testing',
     detail: 'Building security awareness through controlled labs, safe test environments, and defensive testing basics.',
     label: 'Authorized labs',
+    logo: 'Security',
     color: '#67d6a0',
   },
 ]
@@ -46,7 +51,7 @@ function LearningCard({ area, index }) {
   const frontButtonRef = useRef(null)
   const backButtonRef = useRef(null)
   const isFlipped = pinnedFace ?? isHovered
-  const { icon: Icon, title, detail, label, color } = area
+  const { icon: Icon, title, detail, label, logo, color } = area
   const cardNumber = String(index + 1).padStart(2, '0')
 
   function showBack() {
@@ -111,7 +116,10 @@ function LearningCard({ area, index }) {
           aria-hidden={!isFlipped}
         >
           <div className="growth-card-top">
-            <span className="growth-icon-box"><Icon size={19} strokeWidth={1.8} aria-hidden="true" /></span>
+            <span className="growth-back-logo">
+              <span className="growth-icon-box"><Icon size={22} strokeWidth={1.8} aria-hidden="true" /></span>
+              <span className="growth-back-logo-name">{logo}</span>
+            </span>
             <span className="growth-card-number">{cardNumber}</span>
           </div>
           <div className="growth-card-copy">

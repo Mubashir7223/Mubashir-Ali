@@ -314,9 +314,7 @@
 
   .growth-flip-back {
     border: 1px solid rgb(255 190 70 / 55%);
-    background:
-      radial-gradient(ellipse at 100% 0%, rgb(255 255 255 / 20%), transparent 45%),
-      linear-gradient(145deg, #ffbd24, #ffa800 65%, #e99400);
+    background: #ffb000;
     color: #14100a;
     transform: rotateY(180deg);
   }
@@ -334,6 +332,21 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
+  }
+
+  .growth-back-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .growth-back-logo-name {
+    color: #17120a;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
   }
 
   .growth-icon-box {
