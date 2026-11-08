@@ -23,6 +23,10 @@
   50% { opacity: .85; transform: scale(1.05); }
 }
 
+@keyframes hero-typewriter-caret {
+  50% { opacity: 0; }
+}
+
 @layer components {
   .intro-loader {
     position: fixed;
@@ -135,6 +139,30 @@
     background:
       radial-gradient(ellipse at 82% 50%, rgb(101 61 10 / 13%), transparent 42%),
       linear-gradient(120deg, rgb(7 7 6 / 96%), rgb(8 8 7 / 92%) 58%, rgb(9 8 7 / 96%));
+  }
+
+  .hero-typewriter-line {
+    min-height: 1.55em;
+    margin-top: 1.25rem;
+  }
+
+  .hero-typewriter {
+    display: inline-flex;
+    min-width: 13ch;
+    align-items: baseline;
+    color: var(--color-accent);
+  }
+
+  .hero-typewriter-text { white-space: pre; }
+
+  .hero-typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 3px;
+    background: currentColor;
+    transform: translateY(2px);
+    animation: hero-typewriter-caret 900ms step-end infinite;
   }
 
   .hero-line-field {
@@ -726,6 +754,7 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .intro-loader { display: none; }
+  .hero-typewriter-cursor { animation: none; }
   .portfolio-frame::before { opacity: .18; }
   .hero-portrait-art,
   .hero-photo-halo { animation: none !important; }
