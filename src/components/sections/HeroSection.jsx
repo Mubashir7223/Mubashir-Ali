@@ -19,9 +19,17 @@ export default function HeroSection() {
       </div>
       <div className="relative mx-auto grid min-h-[570px] max-w-[1280px] grid-cols-1 items-center px-5 pb-16 pt-12 sm:px-8 lg:min-h-[620px] lg:grid-cols-[1.03fr_.97fr] lg:px-12 lg:pb-10 lg:pt-8">
         <div className="relative z-20 max-w-[680px]">
+          {/* Hidden SEO text — describes Mubashir for crawlers but not visible to users */}
+          <span className="sr-only">
+            Muhammad Mubashir, also known as Mubashir Ali, is a MERN Stack Developer and full-stack web developer
+            from IUB (Islamia University of Bahawalpur), Pakistan. Available for freelance React, Node.js, and
+            MongoDB development projects.
+          </span>
           <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-400/20 bg-emerald-400/[.08] px-3.5 py-2 text-[11px] font-medium text-emerald-200"><span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]" /> Available for freelance</div>
           <p className="mb-2 font-mono text-[11px] uppercase tracking-[.22em] text-copy-muted">Hello, I’m</p>
-          <h1 id="hero-title" className="font-display text-[clamp(42px,7.1vw,78px)] font-extrabold leading-[1.02] tracking-[-.065em] text-white">Mubashir<br /><span className="text-accent">Ali</span></h1>
+          <h1 id="hero-title" className="font-display text-[clamp(42px,7.1vw,78px)] font-extrabold leading-[1.02] tracking-[-.065em] text-white">
+            Muhammad<br />Mubashir<br /><span className="text-accent">Ali</span>
+          </h1>
           <HeroTypewriter />
           <p className="mt-3 font-display text-sm font-medium tracking-[-.01em] text-white/75 sm:text-base">Full-stack Developer <span className="text-accent">&</span> Software Engineer</p>
           <p className="mt-4 max-w-[520px] text-sm leading-7 text-copy-muted sm:text-[15px]">I build modern, responsive web applications with clean code and thoughtful user experiences—from the first interface to the logic behind it.</p>

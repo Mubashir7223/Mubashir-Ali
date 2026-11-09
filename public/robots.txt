@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block assets that add no SEO value
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Sitemap location
+Sitemap: https://muhammadmubashir.tech/sitemap.xml
+
+# Crawl-delay (optional – polite to Bing/others)
+Crawl-delay: 10

@@ -2,16 +2,16 @@ import { ArrowUpRight, Atom, Braces, Code2, GitBranch, Globe2, PanelsTopLeft, Sh
 import ScrollRevealGroup from '../ui/ScrollRevealGroup.jsx'
 
 const skills = [
-  { name: 'React', detail: 'Component-based interfaces', category: 'UI development', icon: Atom, color: '#61dafb' },
+  { name: 'React', detail: 'Component-based interfaces', category: 'MERN Stack', icon: Atom, color: '#61dafb' },
+  { name: 'Node.js', detail: 'Server-side JavaScript runtime', category: 'MERN Stack', icon: Braces, color: '#68a063' },
+  { name: 'MongoDB', detail: 'NoSQL database solutions', category: 'MERN Stack', icon: Globe2, color: '#47a248' },
+  { name: 'Express.js', detail: 'REST API & web server', category: 'MERN Stack', icon: Zap, color: '#ffffff' },
   { name: 'JavaScript', detail: 'Interactive web experiences', category: 'UI development', label: 'JS', color: '#f7df1e' },
   { name: 'HTML5', detail: 'Semantic page structure', category: 'UI development', icon: Code2, color: '#e34f26' },
   { name: 'CSS3', detail: 'Responsive visual styling', category: 'UI development', icon: PanelsTopLeft, color: '#1572b6' },
   { name: 'Tailwind CSS', detail: 'Utility-first styling', category: 'UI development', icon: Wind, color: '#38bdf8' },
-  { name: 'API integration', detail: 'Connecting app services', category: 'Integration', icon: Globe2, color: '#4caf50' },
   { name: 'Git & GitHub', detail: 'Version control workflow', category: 'Workflow', icon: GitBranch, color: '#f05032' },
   { name: 'Accessibility', detail: 'Inclusive experiences', category: 'Practice', icon: ShieldCheck, color: '#a855f7' },
-  { name: 'Vite', detail: 'Frontend build tooling', category: 'Tooling', icon: Zap, color: '#8b80ff' },
-  { name: 'Web UI', detail: 'Clear interface patterns', category: 'Practice', icon: Braces, color: '#eab308' },
 ]
 
 function moveCardTowardPointer(event) {
@@ -38,8 +38,8 @@ export default function SkillsSection() {
         <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[.18em] text-accent"><span className="h-[2px] w-7 rounded-full bg-accent" /> My skills</p>
-            <h2 className="font-display text-3xl font-extrabold tracking-[-.045em] text-white sm:text-4xl">Technologies I work with</h2>
-            <p className="mt-3 max-w-[540px] text-sm leading-6 text-copy-muted">A practical toolkit for building responsive, accessible web products—from polished interfaces to the code behind them.</p>
+            <h2 className="font-display text-3xl font-extrabold tracking-[-.045em] text-white sm:text-4xl">MERN Stack &amp; Web Technologies</h2>
+          <p className="mt-3 max-w-[540px] text-sm leading-6 text-copy-muted">My MERN stack toolkit: MongoDB, Express, React, Node.js &mdash; plus everything needed to build responsive, accessible web applications from front to back.</p>
           </div>
           <div className="flex items-center gap-4">
             <span className="hidden border-l border-white/10 pl-4 font-mono text-[10px] uppercase leading-5 tracking-[.12em] text-white/45 sm:block"><span className="block text-lg font-semibold tracking-normal text-white">10</span>core tools</span>

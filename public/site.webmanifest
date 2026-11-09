@@ -1,0 +1,13 @@
+{
+  "name": "Muhammad Mubashir – MERN Stack Developer",
+  "short_name": "Mubashir Dev",
+  "description": "Portfolio of Muhammad Mubashir, a MERN Stack Developer from IUB, Pakistan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#f6a400",
+  "lang": "en",
+  "icons": [
+    { "src": "/logo.png", "sizes": "any", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

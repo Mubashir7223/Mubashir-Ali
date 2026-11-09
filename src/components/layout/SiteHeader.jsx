@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
+import logoPath from '../../assets/logo.png'
 
 const navigation = [
   ['Home', '#home'],
@@ -17,9 +18,15 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-ink/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-12">
-        <a href="#home" onClick={closeMenu} className="flex items-center gap-2.5" aria-label="Mubashir Ali, home">
-          <span className="grid size-9 place-items-center rounded-xl bg-accent font-display text-xl font-extrabold text-ink shadow-[0_6px_24px_#ffa80038]">M</span>
-          <span className="font-display text-[14px] font-bold tracking-[-.03em] text-white sm:text-base">Mubashir <span className="text-accent">Ali</span></span>
+        <a href="#home" onClick={closeMenu} className="flex items-center gap-2.5" aria-label="Muhammad Mubashir, home">
+          <img
+            src={logoPath}
+            alt="Muhammad Mubashir logo"
+            className="size-10 rounded-xl object-contain drop-shadow-[0_4px_16px_#ffa80055]"
+          />
+          <span className="font-display text-[14px] font-bold tracking-[-.03em] text-white sm:text-base">
+            Mubashir <span className="text-accent">Ali</span>
+          </span>
         </a>
         <button type="button" className="inline-flex size-11 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-accent hover:text-accent lg:hidden" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen((open) => !open)}>
           {menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
